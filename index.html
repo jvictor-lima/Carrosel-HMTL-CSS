@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slideshow</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<header>
+  <div class="caixa_cabecalho" >
+    <img class="img_logo" src="./logo-idea.png" alt="">
+    <ul class="list">
+      <li><a class="li" href="">Sobre mim</a></li>
+      <li><a class="li" href="">Home</a></li>
+      <li><a class="li" href="">Contatos</a></li>
+      <li><a class="li" href="">Produtos</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="section__um">
+  <h2 style="text-align: center; color: white; margin: 1rem 0;">SlideShow</h2>
+  <div id="slideshow">
+      <img id="imagem-1" src="./china.jpg" alt="">
+      <img id="imagem-2" src="./note.jpg" alt="">
+      <img id="imagem-3" src="./tokyo.jpg" alt="">
+      <img id="imagem-4" src="./Paisa.jpg" alt="">
+      <img id="imagem-5" src="./paisagem2.jpg" alt="">
+      <img id="imagem-6" src="./paisagemWLL.jpg" alt="">
+  </div>
+</section>
+  
+</body>
+
+  <script>
+  const imagens = ["./china.jpg", "./note.jpg", "./tokyo.jpg", "./Paisa.jpg", "./paisagem2.jpg", "./paisagemWLL.jpg"];
+  const intervalo = 3000;
+  let ind = 0
+
+    function ocultarImagem(ide){
+      // Oculta todas imagens
+      const imgElements = document.querySelectorAll("#slideshow img") //imgElemnts = recebe a class .slideshow.  img sao todas as tag imgs que tem dentro da classe por isso utilizamos querySelectorAll all de varios 
+      imgElements.forEach((indice)=>{  // forEach pegando todos os elementos dentro da tag img 
+        indice.style.display = "none" // aqui esta ocultando todas as imagens
+      });
+
+      //
+      
+      imgElements[ide].style.display = "block" // pegando os conteudos de dentro de todas as tag e transformando em display block
+    }
+
+
+    function exibirSlide() { // funcao para exibir o slide
+      ocultarImagem(ind); // chama a funcao ocultar imagem ou seja vai ocultar a imagem atual do carrosel
+      ind = (ind + 1) % imagens.length  // atualiza o indice incrementando em 1 e garante que o valor de indice permaneca dentro dos intervalos e repete a imagem continuamente
+      setTimeout(exibirSlide, intervalo) // setTimeout faz um loop no carrosel e o conteudo entre () faz com que as imagens respeite o intervalo
+      
+    }
+
+    exibirSlide();
+
+  </script>
+
+</html>

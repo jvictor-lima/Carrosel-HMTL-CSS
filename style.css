@@ -1,0 +1,94 @@
+body{
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+header{
+  background-color: rgb(230, 252, 252);
+  padding: 2rem 0;
+}
+.caixa_cabecalho{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.img_logo{
+  width: 5rem;
+}
+.list {
+ display: flex;
+ list-style: none;
+}
+
+.li {
+  margin: 0 2rem;
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.section__um{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(0deg, #282f45,#040c25);
+}
+
+#slideshow{
+  position: relative;
+  max-width: 100%;
+  height: 50rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+#imagem-1, #imagem-2, #imagem-3, #imagem-4, #imagem-5, #imagem-6 {
+  width: 65rem;
+  height: 40rem;
+  position: absolute;
+  border-radius: 30px;
+
+}
+
+.flecha:hover{
+  transform: scale(1.2);
+
+}
+
+@media screen and (max-width: 768px) {
+  .caixa_cabecalho {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .list {
+    justify-content: center;
+    margin-top: 1rem;
+    padding: 0;
+  }
+
+  .li {
+    margin: 0.5rem;
+  }
+
+  #imagem-1, #imagem-2, #imagem-3, #imagem-4, #imagem-5, #imagem-6{
+    width: 100%;
+    height: 18rem;
+  }
+
+  .section__um {
+    padding: 1rem;
+    width: inherit;
+    height: 30rem;
+  }
+}
+
+
